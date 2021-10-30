@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+void reverse(int* arr, int n){
+    // write your code here
+       int low=0;
+        int high=n-1;
+  while(high>low)
+  {
+      int temp=arr[low];
+      arr[low] = arr[high];
+      arr[high] = temp;
+      high--;
+      low++;
+  }
+}
+
+void display(int* arr, int n){
+    for(int i = 0 ; i < n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    
+    int* arr = new int[n];
+    for(int i = 0 ; i < n; i++){
+        cin>>arr[i];
+    }
+    reverse(arr,n);
+    display(arr,n);
+}
